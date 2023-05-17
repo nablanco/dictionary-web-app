@@ -12,37 +12,48 @@ Insure Landing Page - Tasks
     - () Code review
     - () Github pages
 
-- Organization
+- Structure:
 
-  - Structure:
+  - Index
 
-    - Index
-      - ThemeContext
-      - Font Context
-      - App
-        - Navbar
-          - Left Group
-            - Dictionary Icon
-          - Right Group
-            - Font selector
-            - Dark mode selector
-        - Body
-          - 1st group: Search bar
-          - 2nd group:
-            - Case 1 (OK response):
-              - 1st group: Word display/pronounciation/sound button
-              - 2nd group: Definition(s)
-              - 3rd group: Source
-            - Case 2 (BAD response):
-              - Validation message for submitting word not found in dictionary API.
-            - Case 3 (blank form)
-              - Validation message for submitting blank form in search bar.
+    - ThemeContext
+      - FontContext
+        - App
+          - Navbar
+            - Left Group
+              - Dictionary Icon
+            - Right Group
+              - Font selection
+              - Theme selection
+          - Body
+            - 1st group: Search bar
+            - 2nd group:
+              - Case 1 (OK response):
+                - 1st group: Word display/pronounciation/sound button
+                - 2nd group: Definition(s)
+                - 3rd group: Source
+              - Case 2 (BAD response):
+                - Validation message for submitting word not found in dictionary API.
+              - Case 3 (blank form):
+                - Validation message for submitting blank form in search bar.
 
   - Notes:
-    - Theme Context:
-      - Create theme file which contains theme array. This array will contain two objects, each of which will contain the theme specifications for the dark and light themes.
-    - App/Navbar:
-      - The navbar doesn't change significantly from desktop to tablet to mobile.
+
+    - Index/ThemeContext:
+      - Create theme file which contains theme array. This array will contain (2) objects, each of which will contain the theme specifications for the dark and light themes.
+      - Create theme context file which contains all related methods and theme content to be distributed as context to sub-components from the App level up.
+    - Index/FontContext:
+      - Create font file which contains font array. The array will contain (3) objects, each of which will contain the font specifications for the different selections.
+      - Create font context file which contains all related methods and font context to be distributed as context to sub-component from the App level up.
+    - Index/App
+      - API Fetch method will reside at App level.
+    - Index/App/Navbar/Right Group/Font selection:
+      - Drop down list allowing use to choose font from list of (3).
+      - List: Sans Serif, Serif, Mono
+    - Index/App/Navbar/Right Group/Theme selection:
+      - Drop down list allowing use to choose theme from list of (2).
+      - List: Light, Dark
+    - Index/App/Body/
 
 - Setup
 
