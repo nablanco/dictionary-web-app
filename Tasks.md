@@ -2,7 +2,7 @@ Insure Landing Page - Tasks
 
 - Progress
 
-  - () Setup
+  - (x) Setup
   - () Develop site
     - () Navbar
     - () Header section w/ text & image
@@ -63,15 +63,7 @@ Insure Landing Page - Tasks
     - ESlint
     - Styled Components
     - add prettier config file
-  - Move assets to src folder
-    - Organize asset data in assets_data file. Import images to pass to components.
-  - Create main component folders and files, create basic component for each.
-    - Navbar
-    - Main body
-  - Add GlobalStyles to App.js to pass basic styling.
-    - Pass margin/padding 0px along with color variables.
 
 - Develop site
-  - Add color and font variables to GlobalStyles.
-  - Navbar
-  - Body
+  - Organize assets, components, and contexts in the src file.
+  - Add basic/empty component files, reflecting structure defined inthe structure section above.
