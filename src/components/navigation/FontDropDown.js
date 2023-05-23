@@ -15,7 +15,7 @@ const Button = styled.button`
   justify-content: space-between;
 `;
 const ButtonImage = styled.img``;
-const DropDownOptions = styled.select`
+const DropDownOptions = styled.div`
   position: absolute;
   top: 100%;
   left: 0;
@@ -27,7 +27,8 @@ const DropDownOptions = styled.select`
   list-style: none;
   border: 1px solid #ccc;
 `;
-const DropDownOption = styled.option`
+const DropDownOption = styled.div`
+  color: black;
   cursor: pointer;
 `;
 
@@ -48,16 +49,15 @@ const FontDropDown = () => {
       {isOpen && (
         <DropDownOptions>
           {fontOptions.map((option) => {
-            <DropDownOption
-              value={option.type}
-              key={option.type}
-              onChange={handleFontChange}
-            >
-              {option.type}
-            </DropDownOption>;
-            {
-              console.log(option.type);
-            }
+            return (
+              <DropDownOption
+                value={option.type}
+                key={option.type}
+                onClick={handleFontChange}
+              >
+                {option.type}
+              </DropDownOption>
+            );
           })}
         </DropDownOptions>
       )}

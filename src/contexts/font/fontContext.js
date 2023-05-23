@@ -23,6 +23,7 @@ const FontContextWrapper = ({ children }) => {
   }, [font]);
 
   const handleFontChange = (event) => {
+    console.log(event.target.value);
     setFont(event.target.value);
   };
 
