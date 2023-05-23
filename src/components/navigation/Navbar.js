@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import logo from "../../assets/images/logo.svg";
+import FontDropDown from "./FontDropDown";
 
 const StyledNavbar = styled.div`
   width: 737px;
@@ -18,7 +19,9 @@ const Navbar = () => {
       <LeftContainer>
         <Logo src={logo} />
       </LeftContainer>
-      <RightContainer></RightContainer>
+      <RightContainer>
+        <FontDropDown />
+      </RightContainer>
     </StyledNavbar>
   );
 };

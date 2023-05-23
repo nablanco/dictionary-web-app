@@ -23,8 +23,8 @@ Insure Landing Page - Tasks
             - Left Group
               - Dictionary Icon
             - Right Group
-              - Font selection
-              - Theme selection
+              - Font selection (drop-down)
+              - Theme selection (slider)
           - Body
             - 1st group: Search bar
             - 2nd group:
@@ -66,4 +66,16 @@ Insure Landing Page - Tasks
 
 - Develop site
   - Organize assets, components, and contexts in the src file.
-  - Add basic/empty component files, reflecting structure defined inthe structure section above.
+  - Add basic/empty component files, reflecting structure defined in the structure section above.
+  - Build order:
+    1. Navbar
+    - Start with navbar as this will serve as test bed for both the Theme and Font contexts and their associated functionality.
+    - Build separate sub-components for the font drop-down menu and the theme slider.
+      - Use the theme slider I built previously in the markdown-editor app and adjust styling.
+    2. ThemeContext
+    - Build out themes array, followed by ThemeContext file.
+    - Save user theme setting in LocalStorage.
+    - Apply ThemeContext methods to the theme selection switch in navbar.
+    - Test functionality using the theme switch by applying theme styling to App background color and Navbar text color.
+    3. FontContext
+    - Follow similar steps as ThemeContext above, but for fonts.

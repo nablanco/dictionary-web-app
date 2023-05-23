@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled, { createGlobalStyle } from "styled-components";
 
+import { FontContext } from "./contexts/font/fontContext";
 import Navbar from "./components/navigation/Navbar";
 import Body from "./components/body/Body";
 
@@ -19,9 +20,10 @@ const StyledApp = styled.div`
 `;
 
 function App() {
+  const { font } = useContext(FontContext);
   return (
     <>
-      <GlobalStyle />
+      <GlobalStyle font={font} />
       <StyledApp>
         <Navbar />
         <Body />
