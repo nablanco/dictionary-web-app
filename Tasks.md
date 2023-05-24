@@ -3,8 +3,8 @@ Insure Landing Page - Tasks
 - Progress
 
   - (x) Setup
-  - () Develop site
-    - () Navbar
+  - (x) Develop site
+    - (x) Navbar
     - () Header section w/ text & image
     - () Body section
     - () Footer

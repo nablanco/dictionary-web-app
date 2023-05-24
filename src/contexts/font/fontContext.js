@@ -8,7 +8,7 @@ export const FontContext = createContext(fontOptions[0].type);
 
 const FontContextWrapper = ({ children }) => {
   const [font, setFont] = useState(
-    JSON.parse(localStorage.getItem("font")) || fontOptions[0].type
+    JSON.parse(localStorage.getItem("font")) || fontOptions[0]
   );
 
   useEffect(() => {
@@ -19,12 +19,14 @@ const FontContextWrapper = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("theme", JSON.stringify(font));
+    localStorage.setItem("font", JSON.stringify(font));
   }, [font]);
 
   const handleFontChange = (event) => {
-    console.log(event.target.value);
-    setFont(event.target.value);
+    let fontIndex = fontOptions.findIndex(
+      (fontObject) => fontObject.type == event.target.value
+    );
+    setFont(fontOptions[fontIndex]);
   };
 
   return (
