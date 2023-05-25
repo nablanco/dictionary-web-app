@@ -42,12 +42,12 @@ Insure Landing Page - Tasks
     - Index/ThemeContext:
       - Create theme file which contains theme array. This array will contain (2) objects, each of which will contain the theme specifications for the dark and light themes.
       - Create theme context file which contains all related methods and theme content to be distributed as context to sub-components from the App level up.
-    - Index/FontContext:
+    - Index/FontContext (done):
       - Create font file which contains font array. The array will contain (3) objects, each of which will contain the font specifications for the different selections.
       - Create font context file which contains all related methods and font context to be distributed as context to sub-component from the App level up.
     - Index/App
       - API Fetch method will reside at App level.
-    - Index/App/Navbar/Right Group/Font selection:
+    - Index/App/Navbar/Right Group/Font selection (done):
       - Drop down list allowing use to choose font from list of (3).
       - List: Sans Serif, Serif, Mono
     - Index/App/Navbar/Right Group/Theme selection:
@@ -79,3 +79,4 @@ Insure Landing Page - Tasks
     - Test functionality using the theme switch by applying theme styling to App background color and Navbar text color.
     3. FontContext
     - Follow similar steps as ThemeContext above, but for fonts.
+    - NOTE: Following the design flow (from left to right) in the Figma file, I started with the FontContext first. While the functionality of the font dropdown menu works, styling the actual dropdown is fucked so I am delaying this for later.

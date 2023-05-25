@@ -9,6 +9,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0px;
     padding: 0px;
+    font-family: ${(props) => props.font.font}, ${(props) => props.font.type};
   }
 `;
 const StyledApp = styled.div`

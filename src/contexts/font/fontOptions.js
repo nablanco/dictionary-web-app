@@ -1,15 +1,15 @@
 const fontOptions = [
   {
-    type: "Sans Serif",
-    font: "inter",
+    type: "sans serif",
+    font: "Inter",
   },
   {
-    type: "Serif",
-    font: "lora",
+    type: "serif",
+    font: "Lora",
   },
   {
-    type: "Mono",
-    font: "inconsolata",
+    type: "mono",
+    font: "Inconsolata",
   },
 ];
 
