@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 
+import { ThemeContext } from "../../contexts/theme/themeContext";
 import iconArrowDown from "../../assets/images/icon-arrow-down.svg";
 import { FontContext } from "../../contexts/font/fontContext";
 
@@ -17,6 +18,7 @@ const DropDownOptions = styled.select`
   outline: none;
   text-transform: capitalize;
   cursor: pointer;
+  color: ${(props) => props.theme.color.header};
   font-family: ${(props) => props.font.font}, ${(props) => props.font.type};
   font-style: normal;
   font-weight: 700;
@@ -46,6 +48,7 @@ const DropDownOption = styled.option`
 
 const FontDropDown = () => {
   const { font, fontOptions, handleFontChange } = useContext(FontContext);
+  const { theme } = useContext(ThemeContext);
 
   return (
     <StyledFontDropDown>
@@ -53,10 +56,10 @@ const FontDropDown = () => {
         value={font.type}
         onChange={handleFontChange}
         font={font}
+        theme={theme}
         photo={iconArrowDown}
       >
         {fontOptions.map((option) => {
-          console.log(iconArrowDown);
           return (
             <DropDownOption value={option.type} key={option.type} font={option}>
               {option.type}

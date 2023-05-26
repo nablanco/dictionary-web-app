@@ -72,11 +72,11 @@ Insure Landing Page - Tasks
     - Start with navbar as this will serve as test bed for both the Theme and Font contexts and their associated functionality.
     - Build separate sub-components for the font drop-down menu and the theme slider.
       - Use the theme slider I built previously in the markdown-editor app and adjust styling.
-    2. ThemeContext
-    - Build out themes array, followed by ThemeContext file.
-    - Save user theme setting in LocalStorage.
-    - Apply ThemeContext methods to the theme selection switch in navbar.
-    - Test functionality using the theme switch by applying theme styling to App background color and Navbar text color.
-    3. FontContext
-    - Follow similar steps as ThemeContext above, but for fonts.
-    - NOTE: Following the design flow (from left to right) in the Figma file, I started with the FontContext first. While the functionality of the font dropdown menu works, styling the actual dropdown is fucked so I am delaying this for later.
+    2. FontContext
+    - Build out font array, followed by FontContext file.
+    - Save user font setting in LocalStorage.
+    - Apply FontContext methods to the font selection in navbar.
+    - Test functionality using the font selector by applying font styling to font selector text.
+    - NOTE: Following the design flow (from left to right) in the Figma file, I started with the FontContext first. The functionality of the font dropdown menu works, but styling the actual dropdown is fucked so I am delaying this for later.
+    3. ThemeContext
+    - Follow similar steps as FontContext above, but for themes.

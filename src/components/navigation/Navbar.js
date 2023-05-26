@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 
+import { ThemeContext } from "../../contexts/theme/themeContext";
 import logo from "../../assets/images/logo.svg";
 import FontDropDown from "./FontDropDown";
+import ThemeSlider from "./ThemeSlider";
 
 const StyledNavbar = styled.div`
   width: 737px;
@@ -20,11 +22,13 @@ const RightContainer = styled.div`
 `;
 const Divider = styled.div`
   height: 32px;
+  width: 1px;
   margin-right: 26px;
-  border: 1px solid #e9e9e9;
+  background-color: ${(props) => props.theme.divider};
 `;
 
 const Navbar = () => {
+  const { theme } = useContext(ThemeContext);
   return (
     <StyledNavbar>
       <LeftContainer>
@@ -32,7 +36,8 @@ const Navbar = () => {
       </LeftContainer>
       <RightContainer>
         <FontDropDown />
-        <Divider />
+        <Divider theme={theme} />
+        <ThemeSlider />
       </RightContainer>
     </StyledNavbar>
   );
