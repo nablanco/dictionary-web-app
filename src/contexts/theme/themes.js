@@ -12,6 +12,8 @@ const themes = {
       icons: "#757575",
       searchbar: "#F4F4F4",
       purple: "#A445ED",
+      fontOptions: "#ffffff",
+      fontOptionsShadow: "rgba(0, 0, 0, 0.1)",
       themeslider: "#757575",
       themeicon:
         "invert(50%) sepia(1%) saturate(0%) hue-rotate(154deg) brightness(90%) contrast(86%)",
@@ -31,6 +33,8 @@ const themes = {
       icons: "#757575",
       searchbar: "#1f1f1f",
       purple: "#A445ED",
+      fontOptions: "#1f1f1f",
+      fontOptionsShadow: "#A445ED",
       themeslider: "#A445ED",
       themeicon:
         "invert(37%) sepia(47%) saturate(6459%) hue-rotate(258deg) brightness(97%) contrast(91%)",

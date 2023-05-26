@@ -22,9 +22,9 @@ const FontContextWrapper = ({ children }) => {
     localStorage.setItem("font", JSON.stringify(font));
   }, [font]);
 
-  const handleFontChange = (event) => {
+  const handleFontChange = (targetFont) => {
     let fontIndex = fontOptions.findIndex(
-      (fontObject) => fontObject.type == event.target.value
+      (fontObject) => fontObject.type == targetFont
     );
     setFont(fontOptions[fontIndex]);
   };
