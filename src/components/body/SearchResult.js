@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledSearchResult = styled.div`
-  color: white;
+  display: flex;
 `;
 
 /* eslint-disable react/prop-types */

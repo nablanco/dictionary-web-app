@@ -6,16 +6,19 @@ import { FontContext } from "../../contexts/font/fontContext";
 import iconSearch from "../../assets/images/icon-search.svg";
 
 const StyledSearchBar = styled.form`
-  width: 737px;
   height: 64px;
   display: flex;
   border-radius: 16px;
   background-color: ${(props) => props.theme.bgcolor.searchbar};
   justify-content: space-between;
   align-items: center;
+
+  @media screen and (max-width: 817px) {
+    margin: 0 40px;
+  }
 `;
 const SearchInput = styled.input`
-  width: 90%;
+  flex-grow: 1;
   height: 100%;
   margin: 0px;
   margin-left: 24.45px;

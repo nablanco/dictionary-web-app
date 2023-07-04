@@ -5,7 +5,12 @@ import SearchBar from "./SearchBar";
 import SearchResult from "./SearchResult";
 
 const StyledBody = styled.div`
+  width: 737px;
   margin-top: 59px;
+
+  @media screen and (max-width: 817px) {
+    width: 100%;
+  }
 `;
 
 const Body = () => {
