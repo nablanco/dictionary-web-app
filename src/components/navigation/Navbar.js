@@ -12,19 +12,43 @@ const StyledNavbar = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media screen and (max-width: 817px) {
+    width: 100%;
+  }
 `;
-const LeftContainer = styled.div``;
+const LeftContainer = styled.div`
+  @media screen and (max-width: 817px) {
+    margin-left: 40px;
+  }
+
+  @media screen and (max-width: 425px) {
+    margin-left: 24px;
+  }
+`;
 const Logo = styled.img``;
 const RightContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media screen and (max-width: 817px) {
+    margin-right: 40px;
+  }
+
+  @media screen and (max-width: 425px) {
+    margin-right: 24px;
+  }
 `;
 const Divider = styled.div`
   height: 32px;
   width: 1px;
-  margin-right: 26px;
+  margin: 0px 26px;
   background-color: ${(props) => props.theme.divider};
+
+  @media screen and (max-width: 425px) {
+    margin: 0px 16px;
+  }
 `;
 
 const Navbar = () => {

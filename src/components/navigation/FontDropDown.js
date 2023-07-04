@@ -7,7 +7,6 @@ import { FontContext } from "../../contexts/font/fontContext";
 
 const StyledFontDropDown = styled.div`
   display: inline-block;
-  margin-right: 26px;
   position: relative;
   -webkit-user-select: none; /* Safari */
   -moz-user-select: none; /* Firefox */
@@ -17,8 +16,6 @@ const StyledFontDropDown = styled.div`
 const DropDownSelect = styled.div`
   width: 120px;
   height: 24px;
-
-  margin-bottom: 10.5px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -33,6 +30,7 @@ const DropDownSelect = styled.div`
 `;
 const DownArrowImg = styled.img``;
 const OptionsContainer = styled.div`
+  margin-top: 10.5px;
   padding: 24px 69px 24px 24px;
   position: absolute;
   right: 0px;
