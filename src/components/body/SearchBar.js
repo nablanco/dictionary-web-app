@@ -16,6 +16,10 @@ const StyledSearchBar = styled.form`
   @media screen and (max-width: 817px) {
     margin: 0 40px;
   }
+
+  @media screen and (max-width: 425px) {
+    margin: 0 24px;
+  }
 `;
 const SearchInput = styled.input`
   flex-grow: 1;
@@ -32,6 +36,10 @@ const SearchInput = styled.input`
   background-color: transparent;
   outline: none;
   border: none;
+
+  @media screen and (max-width: 425px) {
+    font-size: 16px;
+  }
 `;
 const SearchButton = styled.button`
   margin: 0px;
