@@ -5,7 +5,7 @@ import { ThemeContext } from "../../contexts/theme/themeContext";
 import { FontContext } from "../../contexts/font/fontContext";
 import iconSearch from "../../assets/images/icon-search.svg";
 
-const StyledSearchBar = styled.form`
+const StyledSearchBar = styled.div`
   height: 64px;
   display: flex;
   border-radius: 16px;
@@ -56,26 +56,23 @@ const SearchIcon = styled.img`
 
 /* eslint-disable react/prop-types */
 
-const SearchBar = ({ handleSearch }) => {
+const SearchBar = ({ userInput, setInput, handleQuery, handleKeyPress }) => {
   const { theme } = useContext(ThemeContext);
   const { font } = useContext(FontContext);
 
   return (
-    <StyledSearchBar
-      theme={theme}
-      method="post"
-      onSubmit={handleSearch}
-      autocomplete="off"
-    >
+    <StyledSearchBar theme={theme}>
       <SearchInput
-        name="usersearch"
         type="text"
+        value={userInput}
+        onChange={(e) => setInput(e.target.value)}
+        onKeyDown={handleKeyPress}
         theme={theme}
         font={font}
         placeholder="Search for any word..."
         autocomplete="off"
       />
-      <SearchButton type="submit">
+      <SearchButton type="submit" onClick={handleQuery}>
         <SearchIcon src={iconSearch} />
       </SearchButton>
     </StyledSearchBar>

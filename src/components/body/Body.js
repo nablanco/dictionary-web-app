@@ -14,35 +14,42 @@ const StyledBody = styled.div`
 `;
 
 const Body = () => {
+  const [userInput, setUserInput] = useState("");
+  const [emptySearch, setEmptySearch] = useState(false);
   const [data, setData] = useState(null);
 
-  const handleFetch = async (formJSON) => {
+  const handleQuery = async () => {
+    if (userInput.trim() == "") {
+      setEmptySearch(true);
+    }
+
     try {
       const response = await fetch(
-        `https://api.dictionaryapi.dev/api/v2/entries/en/${formJSON.usersearch}`
+        `https://api.dictionaryapi.dev/api/v2/entries/en/${userInput.trim()}`
       );
       const jsonData = await response.json();
       setData(jsonData);
-      console.log(jsonData);
     } catch (error) {
       console.log("Error searching dictionary: ", error);
     }
   };
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-
-    const form = e.target;
-    const formData = new FormData(form);
-    const formJSON = Object.fromEntries(formData.entries());
-
-    handleFetch(formJSON);
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      handleQuery();
+    }
   };
-
   return (
     <StyledBody>
-      <SearchBar handleSearch={handleSearch} />
-      <SearchResult data={data} />
+      <SearchBar
+        userInput={userInput}
+        setInput={setUserInput}
+        handleQuery={handleQuery}
+        handleKeyPress={handleKeyPress}
+      />
+      {console.log("userInput: ", userInput)}
+      {console.log("data: ", data)}
+      <SearchResult emptySearch={emptySearch} data={data} />
     </StyledBody>
   );
 };

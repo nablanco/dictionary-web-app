@@ -1,6 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
+import NullResult from "./api_results/nullresult";
+import EmptySearch from "./api_results/emptysearch";
+import GoodResult from "./api_results/goodresult";
+import BadResult from "./api_results/badresult";
+
 const StyledSearchResult = styled.div`
   display: flex;
   justify-content: center;
@@ -17,10 +22,18 @@ const StyledSearchResult = styled.div`
 
 /* eslint-disable react/prop-types */
 
-const SearchResult = ({ data }) => {
+const SearchResult = ({ emptySearch, data }) => {
   return (
     <StyledSearchResult>
-      {data.title ? data.title : data[0].word}
+      {!data ? (
+        <NullResult />
+      ) : emptySearch == true ? (
+        <EmptySearch />
+      ) : data.title ? (
+        <BadResult />
+      ) : (
+        <GoodResult data={data} />
+      )}
     </StyledSearchResult>
   );
 };
