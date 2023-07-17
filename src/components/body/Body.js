@@ -23,6 +23,7 @@ const Body = () => {
       setEmptySearch(true);
     }
 
+    setEmptySearch(false);
     try {
       const response = await fetch(
         `https://api.dictionaryapi.dev/api/v2/entries/en/${userInput.trim()}`
