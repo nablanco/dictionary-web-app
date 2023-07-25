@@ -21,6 +21,7 @@ const Body = () => {
   const handleQuery = async () => {
     if (userInput.trim() == "") {
       setEmptySearch(true);
+      return;
     }
 
     setEmptySearch(false);
@@ -49,6 +50,7 @@ const Body = () => {
         handleKeyPress={handleKeyPress}
       />
       {console.log("userInput: ", userInput)}
+      {console.log("emptySearch: ", emptySearch)}
       {console.log("data: ", data)}
       <SearchResult emptySearch={emptySearch} data={data} />
     </StyledBody>

@@ -8,7 +8,7 @@ import BadResult from "./api_results/badresult";
 
 const StyledSearchResult = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   color: white;
 
   @media screen and (max-width: 817px) {
@@ -25,10 +25,10 @@ const StyledSearchResult = styled.div`
 const SearchResult = ({ emptySearch, data }) => {
   return (
     <StyledSearchResult>
-      {!data ? (
-        <NullResult />
-      ) : emptySearch == true ? (
+      {emptySearch ? (
         <EmptySearch />
+      ) : !data ? (
+        <NullResult />
       ) : data.title ? (
         <BadResult />
       ) : (
