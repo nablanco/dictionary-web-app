@@ -9,7 +9,7 @@ import testData from "./testData";
 
 const StyledGoodResult = styled.div`
   width: 100%;
-  margin-top: 45px;
+  /* margin-top: 45px; */
 `;
 const WordContainer = styled.div``;
 const HeaderContainer = styled.div`
@@ -34,23 +34,27 @@ const WordPlayButton = styled.div`
 const GoodResult = () => {
   const { theme } = useContext(ThemeContext);
   const { font } = useContext(FontContext);
+
   return (
     <StyledGoodResult theme={theme} font={font}>
-      {testData.map((word, index) => {
+      {testData.map(({ word, phonetic, phonetics }, index) => {
+        const shouldShowPlayButton = phonetics && phonetics[0].audio;
         return (
           <WordContainer key={index}>
             <HeaderContainer>
               <TitleContainer>
-                <WordTitle>{word.word}</WordTitle>
-                <WordPhoentic>{word.phonetic}</WordPhoentic>
+                <WordTitle>{word}</WordTitle>
+                <WordPhoentic>{phonetic}</WordPhoentic>
               </TitleContainer>
-              <WordPlayButton
-                iconPlay={iconPlay}
-                iconHoverPlay={iconHoverPlay}
-                onClick={() => {
-                  new Audio(word.phonetics.audio).play();
-                }}
-              />
+              {shouldShowPlayButton && (
+                <WordPlayButton
+                  iconPlay={iconPlay}
+                  iconHoverPlay={iconHoverPlay}
+                  onClick={() => {
+                    new Audio(phonetics[0].audio).play();
+                  }}
+                />
+              )}
             </HeaderContainer>
           </WordContainer>
         );

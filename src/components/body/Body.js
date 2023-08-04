@@ -12,6 +12,19 @@ const StyledBody = styled.div`
     width: 100%;
   }
 `;
+const StyledSearchResult = styled(SearchResult)`
+  display: flex;
+  justify-content: flex-start;
+  color: white;
+
+  @media screen and (max-width: 817px) {
+    margin: 0 40px;
+  }
+
+  @media screen and (max-width: 425px) {
+    margin: 0 24px;
+  }
+`;
 
 const Body = () => {
   const [userInput, setUserInput] = useState("");
@@ -49,10 +62,7 @@ const Body = () => {
         handleQuery={handleQuery}
         handleKeyPress={handleKeyPress}
       />
-      {console.log("userInput: ", userInput)}
-      {console.log("emptySearch: ", emptySearch)}
-      {console.log("data: ", data)}
-      <SearchResult emptySearch={emptySearch} data={data} />
+      <StyledSearchResult emptySearch={emptySearch} data={data} />
     </StyledBody>
   );
 };
