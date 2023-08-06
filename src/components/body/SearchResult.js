@@ -1,24 +1,24 @@
 import React from "react";
 
-import NullResult from "./api_results/nullresult";
-import EmptySearch from "./api_results/emptysearch";
-import GoodResult from "./api_results/goodresult";
-import BadResult from "./api_results/badresult";
+import InitialResult from "./api_result_components/Initial";
+import EmptyResult from "./api_result_components/Empty";
+import SuccessResult from "./api_result_components/Success";
+import ErrorResult from "./api_result_components/Error";
 
 /* eslint-disable react/prop-types */
 
 const SearchResult = ({ emptySearch, data }) => {
   if (emptySearch) {
-    return <EmptySearch />;
+    return <EmptyResult />;
   }
   if (!data) {
-    return <NullResult />;
+    return <InitialResult />;
   }
   if (data.title) {
-    return <BadResult />;
+    return <ErrorResult />;
   }
 
-  return <GoodResult data={data} />;
+  return <SuccessResult data={data} />;
 };
 
 export default SearchResult;

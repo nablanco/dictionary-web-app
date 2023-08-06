@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import styled from "styled-components";
 
+import { ThemeContext } from "../../contexts/theme/themeContext";
 import SearchBar from "./SearchBar";
 import SearchResult from "./SearchResult";
 
 const StyledBody = styled.div`
   width: 737px;
   margin-top: 59px;
+  color: ${(props) => props.theme.color.header};
 
   @media screen and (max-width: 817px) {
     width: 100%;
@@ -15,7 +17,6 @@ const StyledBody = styled.div`
 const StyledSearchResult = styled(SearchResult)`
   display: flex;
   justify-content: flex-start;
-  color: white;
 
   @media screen and (max-width: 817px) {
     margin: 0 40px;
@@ -30,6 +31,7 @@ const Body = () => {
   const [userInput, setUserInput] = useState("");
   const [emptySearch, setEmptySearch] = useState(false);
   const [data, setData] = useState(null);
+  const { theme } = useContext(ThemeContext);
 
   const handleQuery = async () => {
     if (userInput.trim() == "") {
@@ -55,7 +57,7 @@ const Body = () => {
     }
   };
   return (
-    <StyledBody>
+    <StyledBody theme={theme}>
       <SearchBar
         userInput={userInput}
         setInput={setUserInput}

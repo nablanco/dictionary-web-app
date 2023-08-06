@@ -1,25 +1,32 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 
-import { ThemeContext } from "../../../contexts/theme/themeContext";
-import { FontContext } from "../../../contexts/font/fontContext";
-import iconPlay from "../../../assets/images/icon-play.svg";
-import iconHoverPlay from "../../../assets/images/icon-hover-play.svg";
-import testData from "./testData";
+import MeaningContainer from "./MeaningContainer";
+import { ThemeContext } from "../../../../contexts/theme/themeContext";
+import iconPlay from "../../../../assets/images/icon-play.svg";
+import iconHoverPlay from "../../../../assets/images/icon-hover-play.svg";
 
-const StyledGoodResult = styled.div`
-  width: 100%;
-  /* margin-top: 45px; */
-`;
-const WordContainer = styled.div``;
+const StyledWordContainer = styled.div``;
 const HeaderContainer = styled.div`
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
+  align-items: center;
 `;
 const TitleContainer = styled.div``;
-const WordTitle = styled.div``;
-const WordPhoentic = styled.div``;
+const WordTitle = styled.div`
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+`;
+const WordPhoentic = styled.div`
+  color: ${(props) => props.theme.color.purple};
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+`;
 const WordPlayButton = styled.div`
   width: 75px;
   height: 75px;
@@ -31,20 +38,19 @@ const WordPlayButton = styled.div`
   }
 `;
 
-const GoodResult = () => {
+const WordContainer = ({ data }) => {
   const { theme } = useContext(ThemeContext);
-  const { font } = useContext(FontContext);
 
   return (
-    <StyledGoodResult theme={theme} font={font}>
-      {testData.map(({ word, phonetic, phonetics }, index) => {
+    <>
+      {data.map(({ word, phonetic, phonetics, meanings }, index) => {
         const shouldShowPlayButton = phonetics && phonetics[0].audio;
         return (
-          <WordContainer key={index}>
+          <StyledWordContainer key={index}>
             <HeaderContainer>
               <TitleContainer>
                 <WordTitle>{word}</WordTitle>
-                <WordPhoentic>{phonetic}</WordPhoentic>
+                <WordPhoentic theme={theme}>{phonetic}</WordPhoentic>
               </TitleContainer>
               {shouldShowPlayButton && (
                 <WordPlayButton
@@ -56,11 +62,12 @@ const GoodResult = () => {
                 />
               )}
             </HeaderContainer>
-          </WordContainer>
+            <MeaningContainer meanings={meanings} />
+          </StyledWordContainer>
         );
       })}
-    </StyledGoodResult>
+    </>
   );
 };
 
-export default GoodResult;
+export default WordContainer;
