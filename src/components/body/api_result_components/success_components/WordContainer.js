@@ -40,7 +40,6 @@ const WordPlayButton = styled.div`
 
 const WordContainer = ({ data }) => {
   const { theme } = useContext(ThemeContext);
-
   return (
     <>
       {data.map(({ word, phonetic, phonetics, meanings }, index) => {
