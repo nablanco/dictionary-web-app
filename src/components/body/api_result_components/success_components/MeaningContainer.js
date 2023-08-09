@@ -4,7 +4,9 @@ import styled from "styled-components";
 import { ThemeContext } from "../../../../contexts/theme/themeContext";
 import iconCircle from "../../../../assets/images/icon-circle.svg";
 
-const StyledMeaningContainer = styled.div``;
+const StyledMeaningContainer = styled.div`
+  margin-top: 40px;
+`;
 const PartOfSpeechContainer = styled.div`
   display: flex;
   flex-flow: row nowrap;
@@ -69,34 +71,43 @@ const Synonym = styled.div`
 `;
 
 const MeaningContainer = ({ meanings }) => {
-  let partOfSpeech = meanings[0].partOfSpeech;
-  let definitions = meanings[0].definitions;
-  let synonym = meanings[0].synonyms[0];
   const { theme } = useContext(ThemeContext);
   return (
-    <StyledMeaningContainer>
-      <PartOfSpeechContainer>
-        <PartOfSpeech>{partOfSpeech}</PartOfSpeech>
-        <PartOfSpeechDivider theme={theme} />
-      </PartOfSpeechContainer>
-      <DefinitionsContainer>
-        <DefinitionHeader theme={theme}>Meaning</DefinitionHeader>
-        <DefinitionsList>
-          {definitions.map(({ definition }, index) => {
-            return (
-              <Definition theme={theme} iconCircle={iconCircle} key={index}>
-                {definition}
-              </Definition>
-            );
-          })}
-        </DefinitionsList>
-
-        <SynonymContainer theme={theme}>
-          Synonyms
-          <Synonym theme={theme}>{synonym}</Synonym>
-        </SynonymContainer>
-      </DefinitionsContainer>
-    </StyledMeaningContainer>
+    <>
+      {meanings.map(({ partOfSpeech, definitions, synonyms }, index) => {
+        let shouldShowSynonyms = synonyms[0] && synonyms.length > 0;
+        return (
+          <StyledMeaningContainer key={index}>
+            <PartOfSpeechContainer>
+              <PartOfSpeech>{partOfSpeech}</PartOfSpeech>
+              <PartOfSpeechDivider theme={theme} />
+            </PartOfSpeechContainer>
+            <DefinitionsContainer>
+              <DefinitionHeader theme={theme}>Meaning</DefinitionHeader>
+              <DefinitionsList>
+                {definitions.map(({ definition }, index) => {
+                  return (
+                    <Definition
+                      theme={theme}
+                      iconCircle={iconCircle}
+                      key={index}
+                    >
+                      {definition}
+                    </Definition>
+                  );
+                })}
+              </DefinitionsList>
+              {shouldShowSynonyms && (
+                <SynonymContainer theme={theme}>
+                  Synonyms
+                  <Synonym theme={theme}>{synonyms}</Synonym>
+                </SynonymContainer>
+              )}
+            </DefinitionsContainer>
+          </StyledMeaningContainer>
+        );
+      })}
+    </>
   );
 };
 
