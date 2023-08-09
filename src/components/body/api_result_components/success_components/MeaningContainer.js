@@ -100,7 +100,7 @@ const MeaningContainer = ({ meanings }) => {
               {shouldShowSynonyms && (
                 <SynonymContainer theme={theme}>
                   Synonyms
-                  <Synonym theme={theme}>{synonyms}</Synonym>
+                  <Synonym theme={theme}>{synonyms[0]}</Synonym>
                 </SynonymContainer>
               )}
             </DefinitionsContainer>

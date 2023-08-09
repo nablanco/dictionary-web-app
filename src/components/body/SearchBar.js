@@ -27,7 +27,7 @@ const SearchInput = styled.input`
   margin: 0px;
   margin-left: 24.45px;
   padding: 0px;
-  font-family: ${(props) => props.font};
+  font-family: ${(props) => props.font.font};
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
