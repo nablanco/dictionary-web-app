@@ -29,7 +29,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./dictionary-web-app.jpg)
+![](./dictionary-web-app.png)
 
 ### Links
 
