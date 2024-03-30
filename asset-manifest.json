@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.js": "/dictionary-web-app/static/js/main.f9f3928b.js",
+    "index.html": "/dictionary-web-app/index.html",
+    "static/media/icon-new-window.svg": "/dictionary-web-app/static/media/icon-new-window.17ac2f0f91916515096e759611fdaea9.svg",
+    "static/media/logo.svg": "/dictionary-web-app/static/media/logo.afbe15e827b060eab1c775e3afad2b73.svg",
+    "static/media/icon-moon.svg": "/dictionary-web-app/static/media/icon-moon.fd52e618de9fdb62d0edd814557c07e3.svg",
+    "static/media/icon-search.svg": "/dictionary-web-app/static/media/icon-search.13357ba7763bb4388cba203d0388c375.svg",
+    "static/media/icon-hover-play.svg": "/dictionary-web-app/static/media/icon-hover-play.b8cce9749a16d0f310932ad8cb51fa8b.svg",
+    "static/media/icon-play.svg": "/dictionary-web-app/static/media/icon-play.a659db0104303a8b8ae071e0cf90119d.svg",
+    "static/media/icon-arrow-down.svg": "/dictionary-web-app/static/media/icon-arrow-down.aa902848ffe2b4ed5369af17076de50d.svg",
+    "static/media/icon-circle.svg": "/dictionary-web-app/static/media/icon-circle.80df44da03266de37f9914843c0a6100.svg",
+    "main.f9f3928b.js.map": "/dictionary-web-app/static/js/main.f9f3928b.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.f9f3928b.js"
+  ]
+}
