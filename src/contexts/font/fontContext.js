@@ -8,18 +8,20 @@ export const FontContext = createContext(fontOptions[0].type);
 
 const FontContextWrapper = ({ children }) => {
   const [font, setFont] = useState(
-    JSON.parse(localStorage.getItem("font")) || fontOptions[0]
+    JSON.parse(localStorage.getItem("font-dictionaryApp")) || fontOptions[0]
   );
 
   useEffect(() => {
-    const currentFont = JSON.parse(localStorage.getItem("font"));
+    const currentFont = JSON.parse(
+      localStorage.getItem("fofont-dictionaryAppnt")
+    );
     if (currentFont) {
       setFont(currentFont);
     }
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("font", JSON.stringify(font));
+    localStorage.setItem("font-dictionaryApp", JSON.stringify(font));
   }, [font]);
 
   const handleFontChange = (targetFont) => {

@@ -8,18 +8,20 @@ export const ThemeContext = createContext(themes.dark);
 
 const ThemeContextWrapper = ({ children }) => {
   const [theme, setTheme] = useState(
-    JSON.parse(localStorage.getItem("theme")) || themes.dark
+    JSON.parse(localStorage.getItem("theme-dictionaryApp")) || themes.dark
   );
 
   useEffect(() => {
-    const currentTheme = JSON.parse(localStorage.getItem("theme"));
+    const currentTheme = JSON.parse(
+      localStorage.getItem("theme-dictionaryApp")
+    );
     if (currentTheme) {
       setTheme(currentTheme);
     }
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("theme", JSON.stringify(theme));
+    localStorage.setItem("theme-dictionaryApp", JSON.stringify(theme));
   }, [theme]);
 
   const handleThemeChange = () => {
