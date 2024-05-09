@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/dictionary-web-app/static/js/main.bcf3f5bb.js",
+    "main.js": "/dictionary-web-app/static/js/main.81a2d7ab.js",
     "index.html": "/dictionary-web-app/index.html",
     "static/media/icon-new-window.svg": "/dictionary-web-app/static/media/icon-new-window.17ac2f0f91916515096e759611fdaea9.svg",
     "static/media/logo.svg": "/dictionary-web-app/static/media/logo.afbe15e827b060eab1c775e3afad2b73.svg",
@@ -10,9 +10,9 @@
     "static/media/icon-play.svg": "/dictionary-web-app/static/media/icon-play.a659db0104303a8b8ae071e0cf90119d.svg",
     "static/media/icon-arrow-down.svg": "/dictionary-web-app/static/media/icon-arrow-down.aa902848ffe2b4ed5369af17076de50d.svg",
     "static/media/icon-circle.svg": "/dictionary-web-app/static/media/icon-circle.26890fcb19ee8286edcdf7656541bab5.svg",
-    "main.bcf3f5bb.js.map": "/dictionary-web-app/static/js/main.bcf3f5bb.js.map"
+    "main.81a2d7ab.js.map": "/dictionary-web-app/static/js/main.81a2d7ab.js.map"
   },
   "entrypoints": [
-    "static/js/main.bcf3f5bb.js"
+    "static/js/main.81a2d7ab.js"
   ]
 }
